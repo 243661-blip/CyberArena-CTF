@@ -1,4 +1,4 @@
- name: Mirror core-theme
+ name:Mirror core-theme
 
 on:
   push:
@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-       - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-       - name: Setup SSH for deploy key
+      - name: Setup SSH for deploy key
         run: |
           mkdir -p ~/.ssh
 
@@ -25,16 +25,15 @@ jobs:
 
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-          # Start SSH agent
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/id_ed25519
 
-       - name: Setup git identity
+      - name: Setup git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions@github.com"
 
-       - name: Push subtree
+      - name: Push subtree
         run: |
           export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no"
 
