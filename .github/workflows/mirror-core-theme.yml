@@ -1,6 +1,6 @@
- name:Mirror core-theme
+ name: Mirror core-theme
 
-on:
+"on":
   push:
     branches:
       - main
