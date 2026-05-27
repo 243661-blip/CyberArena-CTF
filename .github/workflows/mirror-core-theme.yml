@@ -14,7 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
+<<<<<<< HEAD
           fetch-depth: 0
+=======
+          fetch-depth: 0 # need full history for subtree
+>>>>>>> eb081c52 (Fix lint + prettier formatting)
 
       - name: Setup SSH for deploy key
         run: |

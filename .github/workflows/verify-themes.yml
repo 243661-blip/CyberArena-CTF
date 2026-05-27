@@ -6,16 +6,15 @@ on:
     branches:
       - master
     paths:
-      - 'CTFd/themes/**'
+      - "CTFd/themes/**"
   pull_request:
     branches:
       - master
     paths:
-      - 'CTFd/themes/**'
+      - "CTFd/themes/**"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     name: Theme Verification
@@ -28,15 +27,15 @@ jobs:
 
       - name: Verify admin theme
         run: |
-            pwd
-            yarn install --non-interactive
-            yarn verify 
+          pwd
+          yarn install --non-interactive
+          yarn verify
         working-directory: ./CTFd/themes/admin
 
       # TODO: Replace in 4.0 with deprecation of previous core theme
       - name: Verify core theme
         run: |
-            pwd
-            yarn install --non-interactive
-            yarn verify
+          pwd
+          yarn install --non-interactive
+          yarn verify
         working-directory: ./CTFd/themes/core

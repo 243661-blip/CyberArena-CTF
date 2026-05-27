@@ -352,5 +352,10 @@ def create_app(config="CTFd.config.Config"):
         init_events(app)
         init_plugins(app)
         init_cli(app)
+        @app.after_request
+        def set_security_headers(response):
+            response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+            response.headers['X-Content-Type-Options'] = 'nosniff'
+            return response
 
         return app

@@ -305,7 +305,7 @@ class ServerConfig(object):
 
 
 class TestingConfig(ServerConfig):
-    SECRET_KEY = "AAAAAAAAAAAAAAAAAAAA"
+    SECRET_KEY = os.environ.get("SECRET_KEY", "AAAAAAAAAAAAAAAAAAAA")
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     TESTING = True
     DEBUG = True
