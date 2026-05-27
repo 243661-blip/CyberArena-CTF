@@ -23,4 +23,4 @@ CyberArena is a modern Capture The Flag (CTF) platform designed for cybersecurit
    python serve.py
 
 3. Open browser:
-   http://localhost:4000
+ http://127.0.0.1:4000
